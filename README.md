@@ -57,4 +57,4 @@ if (err != nil) != tt.wantErr {
 - maybe you guys want it I'll immediately release version 0.0.1 version.
 
 # License
-My car driver license from korean.
+My driver license from Korea.
