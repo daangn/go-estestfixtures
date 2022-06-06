@@ -58,3 +58,6 @@ if (err != nil) != tt.wantErr {
 
 # License
 My driver license from Korea.
+
+# To daangn org.
+혹시 뭔가 바꾸고싶다면, 저에게 말 안해도 되니까 막 수정해주세요. ㅅㄹ합니다. ~(신뢰)~
