@@ -9,7 +9,7 @@ import (
 	"time"
 )
 
-func RunESContainer(containerName string) (string, error) {
+func runESContainer(containerName string) (string, error) {
 	ctx, cancel := context.WithTimeout(context.Background(), time.Second*30)
 	defer cancel()
 	cont, err := testcontainers.GenericContainer(ctx, testcontainers.GenericContainerRequest{

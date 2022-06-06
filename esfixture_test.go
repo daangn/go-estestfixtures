@@ -17,7 +17,7 @@ func TestMain(m *testing.M) {
 	wg := sync.WaitGroup{}
 	wg.Add(2)
 	go func() {
-		esDsn, err := RunESContainer("esfixture-test-source-es")
+		esDsn, err := runESContainer("esfixture-test-source-es")
 		if err != nil {
 			panic(err)
 		}
@@ -25,7 +25,7 @@ func TestMain(m *testing.M) {
 		wg.Done()
 	}()
 	go func() {
-		esDsn, err := RunESContainer("esfixture-test-target-es")
+		esDsn, err := runESContainer("esfixture-test-target-es")
 		if err != nil {
 			panic(err)
 		}
