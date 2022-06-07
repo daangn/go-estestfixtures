@@ -38,13 +38,13 @@ if (err != nil) != tt.wantErr {
 ### `Dump()`
 
 - target elasticsearch로 부터 targetNames의 내용대로 가져옵니다.
-- 파일은 WithDirectory에다가 파일을 만듭니다
-- __schema, __document 이름이 달려있게 됩니다.
-- **__schema의 내용에서는 `.mappings._meta` 에서 `__(prefix)` 가 달려있는 값은 변경하지 마세요.**
+- 파일은 `WithDirectory()`에다가 파일을 만듭니다
+- `__schema`, `__document` 이름이 달려있게 됩니다.
+- **`__schema`의 내용에서는 `.mappings._meta` 에서 `__(prefix)` 가 달려있는 값은 변경하지 마세요.**
 
 ### `Load()`
 
-- 파일은 WithDirectory에 존재하는 내용대로 target elasticsearch에 인덱스를 생성합니다.
+- 파일은 `WithDirectory()`에 존재하는 내용대로 target elasticsearch에 인덱스를 생성합니다.
 - **해당 디렉토리에 있는내용을 전부 ES에 만드는게 아니라 targetNames `WithTargetNames` 에 적어주신 이름에 기반하여 만들도록 합니다.**
 
 ### `ClearElasticsearch()`
@@ -54,7 +54,7 @@ if (err != nil) != tt.wantErr {
 
 
 # There's not a release version yet.
-- maybe you guys want it I'll immediately release version 0.0.1 version.
+- You guys want it, I'll immediately release version 0.0.1 version. Request me by an issue.
 
 # License
 My driver license from Korea.
