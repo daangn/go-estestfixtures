@@ -1,8 +1,6 @@
 package esfixture
 
 const (
-	splitSeperator = "."
-
 	defaultLimit = 100
 	defaultDir   = "./testdata/esfixtures"
 
