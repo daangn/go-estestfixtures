@@ -81,7 +81,7 @@ if (err != nil) != tt.wantErr {
 - [ ] Multi-language Support
   - [ ] Korean
 
-See the [open issues](https://github.com/othneildrew/Best-README-Template/issues) for a full list of proposed features (and known issues).
+See the [open issues](https://github.com/daangn/go-estestfixtures/issues) for a full list of proposed features (and known issues).
 
 ## Contributing
 
