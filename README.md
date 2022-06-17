@@ -1,18 +1,39 @@
-# go-esfixture
-elasticsearch 에 대한 golang용 fixture package.
 
-# requirements
-1. docker:  `go test ./...` 할 때에는 docker를 필요로 합니다.
+<!-- PROJECT SHIELDS -->
+<!--
+*** I'm using markdown "reference style" links for readability.
+*** Reference links are enclosed in brackets [ ] instead of parentheses ( ).
+*** See the bottom of this document for the declaration of the reference variables
+*** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
+*** https://www.markdownguide.org/basic-syntax/#reference-style-links
+-->
+[![Contributors][contributors-shield]][contributors-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
+[![MIT License][license-shield]][license-url]
 
-# dependencies
+## About The Project
+It's inspired [go-testfixtures](https://github.com/go-testfixtures/testfixtures) project.
+This module can dump schemas and documents to json of target elasticsearch. Also, can load to target elasticsearch.
+It's purpose to create unit test code with elasticsearch process.
+
+Let's see what this got.
+
+## Build With
 
 ### 1. go module olivere/elastic
-elasticsearch로 서비스를 하는경우에 olivere/elastic go module package를 자주 쓰기에 dependency로 넣어서 사용함.
+[olivere/elastic](https://github.com/olivere/elastic/search).
+This module is good for service server.
+If you were use elasticsearch with golang in your workload, this module will help you.
+this module give you agility for your workloads when you get or put documents.
 
 ### 2. go module go-testcontainer
-service source code 작성시에, docker container로 unit test를 만들거나 integration test를 돌릴때가 많은데
+[testcontainers/testcontainers-go](https://github.com/). This module is good for creating test code with docker.
+go-estestfixtures project needs to insurance generated files work on real elasticsearch process.
+You can see `esfixture_test.go`.
 
-# features
+## Usage
 
 ### `NewLoader()`
 
@@ -53,11 +74,46 @@ if (err != nil) != tt.wantErr {
 -  지울때에는 `mappings._meta`에 있는 내용을 확인하고 esfixture에서 만든 index의 경우만 제거합니다. 그게 아니거나 의도와 다르게 동작하는거 같은 경우 에러를 내보냅니다.
 
 
-# There's not a release version yet.
-- You guys want it, I'll immediately release version 0.0.1 version. Request me by an issue.
+## Roadmap
+- [x] Release `v0.0.1`
+- [ ] Add Additional Templates w/ examples
+- [ ] Coverage 90% about to v0.0.1
+- [ ] Multi-language Support
+  - [ ] Korean
 
-# License
-My driver license from Korea.
+See the [open issues](https://github.com/othneildrew/Best-README-Template/issues) for a full list of proposed features (and known issues).
 
-# To daangn org.
-혹시 뭔가 바꾸고싶다면, 저에게 말 안해도 되니까 막 수정해주세요. ㅅㄹ합니다. ~(신뢰)~
+## Contributing
+
+Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
+Don't forget to give the project a star! Thanks again!
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Write some code
+4. Run test (it's required docker for running go unit test)
+5. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+6. Push to the Branch (`git push origin feature/AmazingFeature`)
+7. Open a Pull Request
+
+## License
+Distributed under the MIT License. See `LICENSE.txt` for more information.
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+
+[contributors-shield]: https://img.shields.io/github/contributors/daangn/go-estestfixtures.svg?style=for-the-badge
+[contributors-url]: https://github.com/daangn/go-estestfixtures/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/daangn/go-estestfixtures.svg?style=for-the-badge
+[forks-url]: https://github.com/daangn/go-estestfixtures/network/members
+[stars-shield]: https://img.shields.io/github/stars/daangn/go-estestfixtures.svg?style=for-the-badge
+[stars-url]: https://github.com/daangn/go-estestfixtures/stargazers
+[issues-shield]: https://img.shields.io/github/issues/daangn/go-estestfixtures.svg?style=for-the-badge
+[issues-url]: https://github.com/daangn/go-estestfixtures/issues
+[license-shield]: https://img.shields.io/github/license/daangn/go-estestfixtures.svg?style=for-the-badge
+[license-url]: https://github.com/daangn/go-estestfixtures/blob/master/LICENSE.txt
