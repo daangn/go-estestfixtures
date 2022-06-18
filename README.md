@@ -84,7 +84,7 @@ if (err != nil) != tt.wantErr {
 
 ## Roadmap
 - [x] Release `v0.0.1`
-- [ ] Add Additional Templates w/ examples
+- [x] Add Additional Templates w/ [`examples`](https://github.com/daangn/go-estestfixtures/tree/main/examples)
 - [ ] Coverage 90% about to v0.0.1
 - [ ] Multi-language Support
   - [ ] Korean
