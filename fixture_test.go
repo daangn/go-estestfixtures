@@ -1,13 +1,14 @@
-package esfixture
+package estestfixtures
 
 import (
 	"context"
 	"fmt"
-	"github.com/olivere/elastic/v7"
 	"os"
 	"sync"
 	"testing"
 	"time"
+
+	"github.com/olivere/elastic/v7"
 )
 
 var esDsnTestSourceContainer = ""

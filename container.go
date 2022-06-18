@@ -1,12 +1,13 @@
-package esfixture
+package estestfixtures
 
 import (
 	"context"
 	"fmt"
-	"github.com/testcontainers/testcontainers-go"
 	"net"
 	"net/http"
 	"time"
+
+	"github.com/testcontainers/testcontainers-go"
 )
 
 func runESContainer(containerName string) (string, error) {
@@ -36,15 +37,21 @@ func runESContainer(containerName string) (string, error) {
 	}
 
 	dsn := net.JoinHostPort("0.0.0.0", port.Port())
+	successCount := 0
 	for {
 		<-time.After(2 * time.Second)
 		if s, subErr := cont.State(ctx); subErr != nil {
 		} else {
+			if s.ExitCode != 0 {
+				return "", fmt.Errorf("[%s] container's exit code is %d", containerName, s.ExitCode)
+			}
 			if s.Running {
 				_, subErr = http.Get(fmt.Sprintf("%s://%s/_cluster/health", "http", dsn))
 				if subErr == nil {
-					<-time.After(2 * time.Second)
-					break
+					successCount = successCount + 1
+					if successCount > 2 {
+						break
+					}
 				}
 			}
 		}

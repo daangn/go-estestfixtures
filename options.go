@@ -1,8 +1,8 @@
-package esfixture
+package estestfixtures
 
 const (
 	defaultLimit = 100
-	defaultDir   = "./testdata/esfixtures"
+	defaultDir   = "./testdata/estestfixtures"
 
 	clusterHealthStatusValueGreen = "green"
 
@@ -13,7 +13,7 @@ const (
 	extNDJSON = "ndjson"
 
 	metaKeyFrom          = "__from"
-	metaValueFrom        = "esfixtures"
+	metaValueFrom        = "go-estestfixtures"
 	metaKeyProvidedName  = "__provided_name"
 	metaKeyGetTargetName = "__get_target_name"
 )

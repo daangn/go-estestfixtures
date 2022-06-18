@@ -1,4 +1,4 @@
-package esfixture
+package estestfixtures
 
 import (
 	"bufio"
@@ -6,10 +6,11 @@ import (
 	"context"
 	"errors"
 	"fmt"
-	"github.com/olivere/elastic/v7"
 	"net/http"
 	"os"
 	"strings"
+
+	"github.com/olivere/elastic/v7"
 )
 
 type Loader struct {

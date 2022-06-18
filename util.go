@@ -1,4 +1,4 @@
-package esfixture
+package estestfixtures
 
 import (
 	"fmt"

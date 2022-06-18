@@ -1,7 +1,7 @@
 {
 	"mappings": {
 		"_meta": {
-			"__from": "esfixtures",
+			"__from": "go-estestfixtures",
 			"__get_target_name": "faqs_20220529",
 			"__provided_name": "faqs_20220529"
 		},

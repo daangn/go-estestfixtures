@@ -4,7 +4,7 @@
 	},
 	"mappings": {
 		"_meta": {
-			"__from": "esfixtures",
+			"__from": "go-estestfixtures",
 			"__get_target_name": "posts",
 			"__provided_name": "posts_20220529"
 		},

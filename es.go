@@ -1,11 +1,12 @@
-package esfixture
+package estestfixtures
 
 import (
 	"encoding/json"
 	"errors"
 	"fmt"
-	"github.com/olivere/elastic/v7"
 	"io/ioutil"
+
+	"github.com/olivere/elastic/v7"
 )
 
 type SchemaInfoFromFile struct {
