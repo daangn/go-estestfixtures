@@ -1,4 +1,4 @@
-module github.com/daangn/esfixture
+module github.com/daangn/go-estestfixtures
 
 go 1.16
 
