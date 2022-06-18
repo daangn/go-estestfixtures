@@ -9,28 +9,31 @@ import (
 	"time"
 
 	"github.com/olivere/elastic/v7"
+
+	"github.com/daangn/go-estestfixtures/escontainer"
 )
 
 var esDsnTestSourceContainer = ""
 var esDsnTestTargetContainer = ""
 
 func TestMain(m *testing.M) {
+	ctx := context.Background()
 	wg := sync.WaitGroup{}
 	wg.Add(2)
 	go func() {
-		esDsn, err := runESContainer("esfixture-test-source-es")
+		esDsn, err := escontainer.NewDSNFromElasticsearchContainer(ctx, "esfixture-test-source-es")
 		if err != nil {
 			panic(err)
 		}
-		esDsnTestSourceContainer = fmt.Sprintf("http://%s", esDsn)
+		esDsnTestSourceContainer = esDsn
 		wg.Done()
 	}()
 	go func() {
-		esDsn, err := runESContainer("esfixture-test-target-es")
+		esDsn, err := escontainer.NewDSNFromElasticsearchContainer(ctx, "esfixture-test-target-es")
 		if err != nil {
 			panic(err)
 		}
-		esDsnTestTargetContainer = fmt.Sprintf("http://%s", esDsn)
+		esDsnTestTargetContainer = esDsn
 		wg.Done()
 	}()
 	go func() {

@@ -1,4 +1,4 @@
-package estestfixtures
+package escontainer
 
 import (
 	"context"
@@ -10,9 +10,7 @@ import (
 	"github.com/testcontainers/testcontainers-go"
 )
 
-func runESContainer(containerName string) (string, error) {
-	ctx, cancel := context.WithTimeout(context.Background(), time.Second*30)
-	defer cancel()
+func NewDSNFromElasticsearchContainer(ctx context.Context, containerName string) (string, error) {
 	cont, err := testcontainers.GenericContainer(ctx, testcontainers.GenericContainerRequest{
 		ContainerRequest: testcontainers.ContainerRequest{
 			Name:         containerName,
@@ -36,7 +34,8 @@ func runESContainer(containerName string) (string, error) {
 		return "", err
 	}
 
-	dsn := net.JoinHostPort("0.0.0.0", port.Port())
+	dsn := fmt.Sprintf("%s://%s", "http", net.JoinHostPort("0.0.0.0", port.Port()))
+
 	successCount := 0
 	for {
 		<-time.After(2 * time.Second)
@@ -46,7 +45,7 @@ func runESContainer(containerName string) (string, error) {
 				return "", fmt.Errorf("[%s] container's exit code is %d", containerName, s.ExitCode)
 			}
 			if s.Running {
-				_, subErr = http.Get(fmt.Sprintf("%s://%s/_cluster/health", "http", dsn))
+				_, subErr = http.Get(fmt.Sprintf("%s/_cluster/health", dsn))
 				if subErr == nil {
 					successCount = successCount + 1
 					if successCount > 2 {

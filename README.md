@@ -35,6 +35,14 @@ You can see `esfixture_test.go`.
 
 ## Usage
 
+### Examples
+- https://github.com/daangn/go-estestfixtures/tree/main/examples
+
+- `main.go` => it shows how to load and dump using this module
+- `mock.go` => how to create mock elasticsearch with this module
+- `es.go` => normally wrapping elasticsearch client
+- `es_test.go` => use TestMain to create mockES object to control elasticsearch container.
+
 ### `NewLoader()`
 
 - 객체를 생성합니다. 대략 이런느낌으로 작성하시면 됩니다.
